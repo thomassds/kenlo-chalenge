@@ -1,7 +1,10 @@
+import * as dotenv from "dotenv";
+dotenv.config();
+
 import express, { Express } from "express";
 
 import "express-async-errors";
-import cors from "cors";
+
 import Container, { Service } from "typedi";
 import { TypeORMConnection } from "../infraestructure/database/connection";
 import { AppBodyParse } from "./bodyParse";

@@ -9,6 +9,6 @@ export class InfraEnvs {
 
     static readonly database = {
         type: process.env.DATABASE_TYPE,
-        ulr: process.env.DATABASE_URL,
+        url: process.env.DATABASE_URL,
     };
 }

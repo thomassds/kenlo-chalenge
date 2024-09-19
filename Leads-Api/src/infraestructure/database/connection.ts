@@ -2,6 +2,7 @@ import * as path from "path";
 import { DataSource } from "typeorm";
 import { Service } from "typedi";
 import { InfraEnvs } from "../../main/config/envs";
+import { Environments } from "../../main/config/enums";
 
 type DatabaseType = "mongodb";
 
@@ -18,9 +19,27 @@ export class TypeORMConnection implements IDBConnection {
     constructor() {
         this._instance = new DataSource({
             type: InfraEnvs.database.type as DatabaseType,
-            url: InfraEnvs.database.ulr,
+            url: InfraEnvs.database.url,
             logging: false,
-            entities: [path.join("dist", "application", "entities", "*.js")],
+            entities: [
+                InfraEnvs.server.environment === Environments.PRODUCTION
+                    ? path.join(
+                          __dirname,
+                          "..",
+                          "..",
+                          "application",
+                          "entities",
+                          "*.js"
+                      )
+                    : path.join(
+                          __dirname,
+                          "..",
+                          "..",
+                          "application",
+                          "entities",
+                          "*.ts"
+                      ),
+            ],
         });
     }
 

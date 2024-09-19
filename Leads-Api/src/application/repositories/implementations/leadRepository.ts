@@ -55,7 +55,6 @@ export class LeadRepository implements ILeadRepository {
 
             return response;
         } catch (error) {
-            console.info(error);
             throw new DatabaseError("Fail to create this Lead");
         }
     }

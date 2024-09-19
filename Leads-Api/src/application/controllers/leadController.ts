@@ -40,7 +40,7 @@ export class LeadController {
             phone,
         });
 
-        return res.status(200).json(response);
+        return res.status(201).json(response);
     }
 
     async updateLead(req: Request, res: Response) {
