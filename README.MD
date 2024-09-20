@@ -63,7 +63,7 @@ Para testar esta aplicação você pode fazer de 3 formas, em produção, com do
 
 ## Lia
 
--   Aplicação: lia-production.up.railway.app/api/lia
+-   Aplicação: https://lia-production.up.railway.app/api/lia
 -   Swagger: https://lead-manager-production.up.railway.app/api-docs/
 -   Read Me: https://github.com/thomassds/kenlo-chalenge/blob/main/Lia-Api/docs/README.md
 
