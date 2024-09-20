@@ -96,6 +96,8 @@ Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 
 Os testes são escritos usando Jest e Supertest. Para executar os testes, use o comando:
 
+1. Iniciar Testes:
+
     ```bash
     npm run test
     ```
