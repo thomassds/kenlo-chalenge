@@ -3,4 +3,5 @@ export enum Environments {
     DEVELOP = "development",
     HOMOLOG = "homolog",
     PRODUCTION = "production",
+    TEST = "test",
 }
