@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+    app:
+        build: ./Leads-Api
+        ports:
+            - "3333:3333"
+        environment:
+            NODE_ENV: development
+            PORT: 3333
+            AUTH_SECRET: Defina uma Secreet
+            DATABASE_TYPE: mongodb
+            DATABASE_URL: mongodb://mongo:27017/lead_management
+        depends_on:
+            - mongo
+
+    lia:
+        build: ./Lia-Api
+        ports:
+            - "3334:3334"
+        environment:
+            NODE_ENV: development
+            PORT: 3334
+            AUTH_SECRET: Defina uma Secreet
+            DATABASE_TYPE: mongodb
+            DATABASE_URL: mongodb://mongo:27017/lead_management
+            LEAD_MANAGER_BASE_URL: http://app:3333/api
+            LEAD_MANAGER_API_KEY: Defina uma Secreet
+            OPENAI_API_KEY: API-KEY OPENAI
+
+        depends_on:
+            - mongo
+
+    mongo:
+        image: mongo:latest
+        ports:
+            - "27017:27017"
+        volumes:
+            - mongo_data:/data/db
+
+volumes:
+    mongo_data:

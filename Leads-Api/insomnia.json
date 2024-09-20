@@ -1,0 +1,323 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2024-09-20T07:20:58.967Z",
+    "__export_source": "insomnia.desktop.app:v2023.5.8",
+    "resources": [
+        {
+            "_id": "req_ee762dc07d2e471cb18a005f32b5a929",
+            "parentId": "wrk_cf363bb590034e4ba81a38a1995ececb",
+            "modified": 1726808635494,
+            "created": 1726713341534,
+            "url": "{{ _.base_url }}/leads/66eb9df69df8435b5aeb3e12",
+            "name": "Select",
+            "description": "",
+            "method": "GET",
+            "body": { "mimeType": "application/json", "text": "" },
+            "parameters": [
+                {
+                    "id": "pair_bcc1fc834a1e467c9fb592926371c199",
+                    "name": "page",
+                    "value": "1",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_243dbd4af9a745a5a99276c4f58fe56c",
+                    "name": "perPage",
+                    "value": "10",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_8f83c930af36474aa5c38bf4a1fb76d2",
+                    "name": "productName",
+                    "value": "Laranja",
+                    "description": "",
+                    "disabled": true
+                }
+            ],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" },
+                { "name": "User-Agent", "value": "insomnia/2023.5.8" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{token}}",
+                "disabled": false
+            },
+            "metaSortKey": -1726802435074,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_cf363bb590034e4ba81a38a1995ececb",
+            "parentId": null,
+            "modified": 1726802616493,
+            "created": 1726713341500,
+            "name": "Kenlo - Leads",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_68dda7dfab6c42adbb00dad0471c70e2",
+            "parentId": "wrk_cf363bb590034e4ba81a38a1995ececb",
+            "modified": 1726802586130,
+            "created": 1726713341529,
+            "url": "{{ _.base_url }}/leads",
+            "name": "Select All",
+            "description": "",
+            "method": "GET",
+            "body": { "mimeType": "application/json", "text": "" },
+            "parameters": [
+                {
+                    "id": "pair_bcc1fc834a1e467c9fb592926371c199",
+                    "name": "page",
+                    "value": "1",
+                    "description": ""
+                },
+                {
+                    "id": "pair_243dbd4af9a745a5a99276c4f58fe56c",
+                    "name": "perPage",
+                    "value": "10",
+                    "description": "",
+                    "disabled": false
+                },
+                {
+                    "id": "pair_8f83c930af36474aa5c38bf4a1fb76d2",
+                    "name": "name",
+                    "value": "Thomas",
+                    "description": "",
+                    "disabled": false
+                }
+            ],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" },
+                { "name": "User-Agent", "value": "insomnia/2023.5.8" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{token}}",
+                "disabled": false
+            },
+            "metaSortKey": -1726802435049,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_4b67d9b50b2345e29ddf86857cfe238e",
+            "parentId": "wrk_cf363bb590034e4ba81a38a1995ececb",
+            "modified": 1726802592241,
+            "created": 1726713341523,
+            "url": "{{ _.base_url }}/leads",
+            "name": "Create",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Thomas Domingos\",\n\t\"email\": \"thomasdomingos@kenlo.com\",\n\t\"phone\": \"+5519981335164\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" },
+                { "name": "User-Agent", "value": "insomnia/2023.5.8" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{token}}",
+                "prefix": ""
+            },
+            "metaSortKey": -1726802435042.75,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_b332977353954887b2c340a0461cdee5",
+            "parentId": "wrk_cf363bb590034e4ba81a38a1995ececb",
+            "modified": 1726816819833,
+            "created": 1726808467754,
+            "url": "{{ _.base_url }}/leads/66eb9df69df8435b5aeb3e12/interactions",
+            "name": "Add Interaction",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"message\": \"Porque o Thomas deve ser contratado?\",\n\t\"response\": \"Porque ele é o candidato mais preparado para solucionar os problemas do mercado imobiliario.\",\n\t\"timestamp\": \"2024-09-20T05:00:00Z\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" },
+                { "name": "User-Agent", "value": "insomnia/2023.5.8" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{token}}",
+                "prefix": ""
+            },
+            "metaSortKey": -1726802435039.625,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_99de3c12967b44cd8c2baf2e27c56bee",
+            "parentId": "wrk_cf363bb590034e4ba81a38a1995ececb",
+            "modified": 1726802587176,
+            "created": 1726713341537,
+            "url": "{{ _.base_url }}/leads/66eb9b2a5e17fffefd21047f",
+            "name": "Update",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"name\": \"Thomas Domingos\",\n\t\"email\": \"thomasdomingos@hotmail.com\",\n\t\"phone\": \"+5519981335164\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" },
+                { "name": "User-Agent", "value": "insomnia/2023.5.8" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{token}}",
+                "disabled": false
+            },
+            "metaSortKey": -1726802435036.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_21f14d95dd9f4731bf5214e74e33c9ef",
+            "parentId": "wrk_cf363bb590034e4ba81a38a1995ececb",
+            "modified": 1726802590705,
+            "created": 1726713341541,
+            "url": "{{ _.base_url }}/leads/66eb9b2a5e17fffefd21047f",
+            "name": "Delete",
+            "description": "",
+            "method": "DELETE",
+            "body": { "mimeType": "application/json", "text": "" },
+            "parameters": [
+                {
+                    "id": "pair_bcc1fc834a1e467c9fb592926371c199",
+                    "name": "page",
+                    "value": "1",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_243dbd4af9a745a5a99276c4f58fe56c",
+                    "name": "perPage",
+                    "value": "10",
+                    "description": "",
+                    "disabled": true
+                },
+                {
+                    "id": "pair_8f83c930af36474aa5c38bf4a1fb76d2",
+                    "name": "productName",
+                    "value": "Laranja",
+                    "description": "",
+                    "disabled": true
+                }
+            ],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" },
+                { "name": "User-Agent", "value": "insomnia/2023.5.8" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{token}}",
+                "disabled": false
+            },
+            "metaSortKey": -1726802435027.125,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_8ff27ac4be0e4461a471096f1c6978fe",
+            "parentId": "wrk_cf363bb590034e4ba81a38a1995ececb",
+            "modified": 1726816777857,
+            "created": 1726713341503,
+            "name": "Base Environment",
+            "data": {
+                "base_url": "http://localhost:3333/api",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRob21hcyBEb21pbmdvcyAtIEtlbmxvIFRlc3QiLCJpYXQiOjE1MTYyMzkwMjJ9.MSafOnQxMd4qzGHt123ODJBJcz78lruRquNnG70gEEc"
+            },
+            "dataPropertyOrder": { "&": ["base_url", "token"] },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1726436309990,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_680b96f2d96b4859b2aa949112bef835",
+            "parentId": "wrk_cf363bb590034e4ba81a38a1995ececb",
+            "modified": 1726713341516,
+            "created": 1726713341516,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_6c2e566316a945c9bda30c231775833e",
+            "parentId": "wrk_cf363bb590034e4ba81a38a1995ececb",
+            "modified": 1726713341551,
+            "created": 1726713341549,
+            "fileName": "Kenlo",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        },
+        {
+            "_id": "env_fe909c24b4c94e96873d9314f68d789c",
+            "parentId": "env_8ff27ac4be0e4461a471096f1c6978fe",
+            "modified": 1726816805701,
+            "created": 1726816654272,
+            "name": "Prod",
+            "data": {
+                "base_url": "https://lead-manager-production.up.railway.app/api",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRob21hcyBEb21pbmdvcyAtIEtlbmxvIFRlc3QiLCJpYXQiOjE1MTYyMzkwMjJ9.MSafOnQxMd4qzGHt123ODJBJcz78lruRquNnG70gEEc"
+            },
+            "dataPropertyOrder": { "&": ["base_url", "token"] },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1726816654272,
+            "_type": "environment"
+        }
+    ]
+}

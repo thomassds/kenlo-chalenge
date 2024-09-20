@@ -22,14 +22,14 @@ export class TypeORMConnection implements IDBConnection {
             url: InfraEnvs.database.url,
             logging: false,
             entities: [
-                InfraEnvs.server.environment === Environments.PRODUCTION
+                InfraEnvs.server.environment === Environments.TEST
                     ? path.join(
                           __dirname,
                           "..",
                           "..",
                           "application",
                           "entities",
-                          "*.js"
+                          "*.ts"
                       )
                     : path.join(
                           __dirname,
@@ -37,7 +37,7 @@ export class TypeORMConnection implements IDBConnection {
                           "..",
                           "application",
                           "entities",
-                          "*.ts"
+                          "*.js"
                       ),
             ],
         });

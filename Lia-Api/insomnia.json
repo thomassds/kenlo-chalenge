@@ -1,0 +1,102 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2024-09-20T07:38:51.285Z",
+    "__export_source": "insomnia.desktop.app:v2023.5.8",
+    "resources": [
+        {
+            "_id": "req_48a87076d58b47e99f69c9aec3b3fa8f",
+            "parentId": "wrk_627fdb2a9f8a4ac4bc06e8627615c8fc",
+            "modified": 1726817338189,
+            "created": 1726802604701,
+            "url": "{{ _.base_url }}/interactions",
+            "name": "Create",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"message\": \"O que é Clean Archteture?\",\n\t\"leadId\": \"66eb9df69df8435b5aeb3e12\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                { "name": "Content-Type", "value": "application/json" },
+                { "name": "User-Agent", "value": "insomnia/2023.5.8" }
+            ],
+            "authentication": {
+                "type": "bearer",
+                "token": "{{token}}",
+                "prefix": ""
+            },
+            "metaSortKey": -1726802435042.75,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_627fdb2a9f8a4ac4bc06e8627615c8fc",
+            "parentId": null,
+            "modified": 1726802604683,
+            "created": 1726802604683,
+            "name": "Kenlo - Lia",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "env_9e45a1097f644b6898d6126ecd0babae",
+            "parentId": "wrk_627fdb2a9f8a4ac4bc06e8627615c8fc",
+            "modified": 1726816867523,
+            "created": 1726802604685,
+            "name": "Base Environment",
+            "data": {
+                "base_url": "http://localhost:3334/api/lia",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRob21hcyBEb21pbmdvcyAtIEtlbmxvIFRlc3QiLCJpYXQiOjE1MTYyMzkwMjJ9.MSafOnQxMd4qzGHt123ODJBJcz78lruRquNnG70gEEc"
+            },
+            "dataPropertyOrder": { "&": ["base_url", "token"] },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1726436309990,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_2b55159c947e475192b36b3a6ec7bf0f",
+            "parentId": "wrk_627fdb2a9f8a4ac4bc06e8627615c8fc",
+            "modified": 1726802604689,
+            "created": 1726802604689,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_3edbe48219604ad48a245f4f9606acf3",
+            "parentId": "wrk_627fdb2a9f8a4ac4bc06e8627615c8fc",
+            "modified": 1726802604720,
+            "created": 1726802604694,
+            "fileName": "Kenlo - Lia",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        },
+        {
+            "_id": "env_687d3ebbdb434e3eb3db5f0c899e41b1",
+            "parentId": "env_9e45a1097f644b6898d6126ecd0babae",
+            "modified": 1726817463162,
+            "created": 1726816868344,
+            "name": "Prod",
+            "data": {
+                "base_url": "https://lia-production.up.railway.app/api/lia",
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRob21hcyBEb21pbmdvcyAtIEtlbmxvIFRlc3QiLCJpYXQiOjE1MTYyMzkwMjJ9.MSafOnQxMd4qzGHt123ODJBJcz78lruRquNnG70gEEc"
+            },
+            "dataPropertyOrder": { "&": ["base_url", "token"] },
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1726816868344,
+            "_type": "environment"
+        }
+    ]
+}
