@@ -34,9 +34,11 @@ Este é um desafio realizado para a empresa Kenlo
 
 Para testar esta aplicação você pode fazer de 3 formas, em produção, com docker ou executando localmente.
 
-Caso queira executar em produção basta seguir os links que temos a baixo e fica a sua escolha se deseja usar o Swagger ou o Insomnia (O arquivo se encontra na raiz de cada projeto).
+1. Produção
+   Caso queira testar em produção basta seguir os links que temos a baixo. Ficara a sua escolha se deseja usar o Swagger ou o Insomnia (O arquivo se encontra na raiz de cada projeto).
 
-Para criar um ambiente em seu computador atraves do docker você precisa: (Nescessario ter instalado o docker e docker-compose)
+2. Docker
+   Para criar um ambiente em seu computador atraves do docker você precisa: (Nescessario ter instalado o docker e docker-compose)
 
 -   Baixar este repositorio
 -   Definir as variaveis de ambiente no arquivo docker-compose.yml -
@@ -47,7 +49,8 @@ Para criar um ambiente em seu computador atraves do docker você precisa: (Nesce
     docker-compose up --build
     ```
 
-Caso queira executar locamente você precisara seguir o readme de cada aplicação nela tera as especificações de cada API.
+3. Local
+   Caso queira executar locamente você precisara seguir o readme de cada aplicação nela tera as especificações de cada API.
 
 ## Lead Manager
 
