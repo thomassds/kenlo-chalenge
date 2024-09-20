@@ -69,18 +69,23 @@ Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 
     ```bash
     npm run start
+    ```
+
+    ou
+
+    ```bash
     yarn start
     ```
 
-A API estará disponível em http://localhost:3333 ou na porta em que definiu em seu arquvio ENV.
+    A API estará disponível em http://localhost:3333 ou na porta em que definiu em seu arquvio ENV.
 
 2. Insomnia:
 
-Você pode encontrar o arquivo insomnia.json na raiz do projeto com os endpoints já configurados.
+    Você pode encontrar o arquivo insomnia.json na raiz do projeto com os endpoints já configurados.
 
 3. Swagger:
 
-Caso prefira também temos uma documentação com o Swagger, após iniciar a aplicação basta acessar http://localhost:3333/api-docs ou na porta em que definiu em seu arquvio ENV.
+    Caso prefira também temos uma documentação com o Swagger, após iniciar a aplicação basta acessar http://localhost:3333/api-docs ou na porta em que definiu em seu arquvio ENV.
 
 ## Execução Testes
 
@@ -88,6 +93,11 @@ Os testes são escritos usando Jest e Supertest. Para executar os testes, use o 
 
     ```bash
     npm run test
+    ```
+
+    ou
+
+    ```bash
     yarn test
     ```
 
