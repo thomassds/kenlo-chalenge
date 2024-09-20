@@ -2,7 +2,7 @@ import { FindManyOptions, FindOneOptions, Repository } from "typeorm";
 import { QueryDeepPartialEntity } from "typeorm/query-builder/QueryPartialEntity";
 import { ILeadRepository } from "../contracts";
 import { Lead } from "../../entities";
-import { CreateLeadDTO } from "../../dtos";
+import { AddInteractionDTO, CreateLeadDTO } from "../../dtos";
 import { PaginatedResponse } from "../../interfaces/bases";
 import { TypeORMConnection } from "../../../infraestructure/database/connection";
 import Container, { Service } from "typedi";
@@ -80,5 +80,27 @@ export class LeadRepository implements ILeadRepository {
         } catch (error) {
             throw new DatabaseError("Fail to delete this Lead");
         }
+    }
+
+    async addInteraction(
+        leadId: ObjectId,
+        interaction: AddInteractionDTO
+    ): Promise<Lead | null> {
+        const lead = await this.selectOne({
+            where: { _id: leadId },
+        });
+        if (!lead) {
+            throw new DatabaseError("Fail to add interaction - Lead not found");
+        }
+
+        if (!lead.interactions) {
+            lead.interactions = [];
+        }
+
+        lead.interactions.push(interaction);
+
+        await this.repository.save(lead);
+
+        return lead;
     }
 }

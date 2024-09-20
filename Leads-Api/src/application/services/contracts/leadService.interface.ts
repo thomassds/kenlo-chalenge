@@ -4,6 +4,7 @@ import {
     SelectAllLeadDTO,
     CreateLeadDTO,
     UpdateLeadDTO,
+    AddInteractionDTO,
 } from "../../dtos";
 import { PaginatedResponse } from "../../interfaces/bases";
 
@@ -13,4 +14,9 @@ export interface ILeadService {
     createLead(where: CreateLeadDTO): Promise<Lead>;
     updateLead(id: string, data: UpdateLeadDTO): Promise<void>;
     deleteLead(id: string): Promise<void>;
+
+    addInteractions(
+        leadId: string,
+        interaction: AddInteractionDTO
+    ): Promise<Lead | null>;
 }

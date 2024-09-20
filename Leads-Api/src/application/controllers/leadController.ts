@@ -58,4 +58,18 @@ export class LeadController {
 
         return res.status(200).json(response);
     }
+
+    async addInteraction(req: Request, res: Response) {
+        const { leadId } = req.params;
+
+        const { message, response, timestamp } = req.body;
+
+        const result = await this.leadService.addInteractions(leadId, {
+            message,
+            response,
+            timestamp,
+        });
+
+        return res.status(200).json(result);
+    }
 }

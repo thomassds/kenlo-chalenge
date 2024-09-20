@@ -90,6 +90,32 @@ describe("Lead API", () => {
         expect(response.status).toBe(200);
     });
 
+    it("Should add a interaction in lead", async () => {
+        const response = await request(appInstance)
+            .post(`/api/leads/${id}/interactions`)
+            .set("Authorization", `Bearer ${InfraEnvs.server.authSecret}`)
+            .send({
+                message: "Porque o Thomas deve ser contratado?",
+                response:
+                    "Porque ele é o candidato mais preparado para solucionar os problemas do mercado imobiliario; Possuindo mais de 2 anos de experiencia com serviços de tecnologias para imobiliarias.",
+                timestamp: "2024-09-20T05:00:00.000Z",
+            });
+
+        expect(response.status).toBe(200);
+
+        expect(response.body).toEqual(
+            expect.objectContaining({
+                interactions: expect.arrayContaining([
+                    expect.objectContaining({
+                        message: expect.any(String),
+                        response: expect.any(String),
+                        timestamp: expect.any(String),
+                    }),
+                ]),
+            })
+        );
+    });
+
     it("Should delete a lead", async () => {
         const response = await request(appInstance)
             .put(`/api/leads/${id}`)

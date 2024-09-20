@@ -3,3 +3,4 @@ export * from "./updateLeadSchema";
 export * from "./deleteLeadSchema";
 export * from "./selectOneLeadSchema";
 export * from "./selectAllLeadSchema";
+export * from "./addInteractionSchema";

@@ -3,6 +3,7 @@ import Container from "typedi";
 import { LeadController } from "../controllers";
 import { Authenticated, RouterValidator } from "../middlewares";
 import {
+    AddInteractionSchema,
     CreateLeadSchema,
     DeleteLeadSchema,
     SelectAllLeadSchema,
@@ -51,6 +52,13 @@ export class LeadRouter {
             auth.execute,
             routerValidator.execute(DeleteLeadSchema.rules()),
             (req, res) => controller.deleteLead(req, res)
+        );
+
+        router.post(
+            "/leads/:leadId/interactions",
+            auth.execute,
+            routerValidator.execute(AddInteractionSchema.rules()),
+            (req, res) => controller.addInteraction(req, res)
         );
 
         return router;

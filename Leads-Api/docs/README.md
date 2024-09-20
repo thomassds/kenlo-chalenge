@@ -17,7 +17,7 @@ Este projeto é uma API para gerenciamento de leads, permitindo operações de C
 -   Express
 -   TypeORM
 -   MongoDB
--   Jest para testes
+-   Jest
 
 ## Arquitetura e Boas Praticas
 
@@ -41,9 +41,8 @@ Antes de executar o projeto, você precisará ter os seguintes itens instalados:
 1.  Clone o repositório:
 
     ```bash
-    git clone https://github.com/seuusuario/lead-management-api.git
+    git clone https://github.com/seuusuario/kenlo-chalenge.git
     cd lead-management-api
-
     ```
 
 2.  Instale as dependências:
@@ -96,8 +95,12 @@ Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 
 Os testes são escritos usando Jest e Supertest. Para executar os testes, use o comando:
 
-        ```bash
-    npm test
+Obs: Para funcionar variavel de ambiente NODE_ENV deve estar como "test"
+
+1. Iniciar Testes:
+
+    ```bash
+    npm run test
     ```
 
     ou
@@ -105,7 +108,7 @@ Os testes são escritos usando Jest e Supertest. Para executar os testes, use o 
     ```bash
     yarn test
     ```
-    
+
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
@@ -119,4 +122,4 @@ Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para ma
 Se você tiver alguma dúvida ou sugestão, entre em contato:
 
 -   Email: thomasdomingos@hotmail.com
--   GitHub: thomassds
+-   GitHub: @thomassds

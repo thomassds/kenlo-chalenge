@@ -1,0 +1,96 @@
+openapi: 3.0.1
+info:
+    title: API Lia
+    description: API LIA - CHATBOT - Clean Archteture, SOLID, Design Paterns, ChatGPT
+    version: "0.1"
+
+paths:
+    /api/lia/interactions:
+        post:
+            tags:
+                - Message
+            summary: "Interação com a Lia"
+            description: "Este endpoint permite enviar uma menssagem/pergunta a Lia e ela respondera."
+            operationId: "sendMessage"
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                leadId:
+                                    type: string
+                                    example: "66eb9df69df8435b5aeb3e12"
+                                message:
+                                    type: string
+                                    example: "Porque o Thomas deve ser contratado?"
+            responses:
+                "201":
+                    description: "Lead criado com sucesso"
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/entities/Lead"
+                "400":
+                    $ref: "#/components/responses/BadRequest"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
+                "403":
+                    $ref: "#/components/responses/Forbidden"
+                "500":
+                    $ref: "#/components/responses/InternalError"
+
+            security:
+                - bearerAuth: []
+
+components:
+    securitySchemes:
+        bearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
+
+    entities:
+        Lead:
+            type: object
+            properties:
+                _id:
+                    type: string
+                    example: "66e7cf44d4f1c84f35ef1215"
+                name:
+                    type: string
+                    example: "Thomas Domingos"
+                email:
+                    type: string
+                    example: "thomasdomingos@kenlo.com.br"
+                phone:
+                    type: string
+                    example: "+5519981335164"
+                interactions:
+                    type: array
+                    items:
+                        type: object
+                        properties:
+                            message:
+                                type: string
+                                example: "Porque o Thomas deve ser contratado?"
+                            response:
+                                type: string
+                                example: "Porque ele é o candidato mais preparado para solucionar os problemas do mercado imobiliário; Possuindo mais de 2 anos de experiência com serviços de tecnologias para imobiliárias."
+                            createdAt:
+                                type: string
+                                format: date-time
+                                example: "2024-09-20T05:00:00.000Z"
+
+    responses:
+        Unauthorized:
+            description: "Token de autenticação inválido ou ausente"
+        Forbidden:
+            description: "Acesso negado para este recurso"
+        NotFound:
+            description: "Recurso não encontrado"
+        InternalError:
+            description: "Erro interno no servidor"
+        BadRequest:
+            description: "Requisição malformada ou dados inválidos"

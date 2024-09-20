@@ -1,5 +1,6 @@
 import { Inject, Service } from "typedi";
 import {
+    AddInteractionDTO,
     CreateLeadDTO,
     SelectAllLeadDTO,
     SelectOneLeadDTO,
@@ -69,6 +70,18 @@ export class LeadService implements ILeadService {
 
     async deleteLead(id: string): Promise<void> {
         const response = await this.leadRepository.deleteLead(new ObjectId(id));
+
+        return response;
+    }
+
+    async addInteractions(
+        leadId: string,
+        interaction: AddInteractionDTO
+    ): Promise<Lead | null> {
+        const response = await this.leadRepository.addInteraction(
+            new ObjectId(leadId),
+            interaction
+        );
 
         return response;
     }

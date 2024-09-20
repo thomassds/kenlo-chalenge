@@ -14,4 +14,11 @@ export class Lead {
 
     @Column()
     phone?: string;
+
+    @Column("json")
+    interactions: Array<{
+        message: string;
+        response: string;
+        timestamp: Date;
+    }>;
 }

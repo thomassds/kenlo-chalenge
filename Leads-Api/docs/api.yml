@@ -26,20 +26,7 @@ paths:
                     content:
                         application/json:
                             schema:
-                                type: object
-                                properties:
-                                    id:
-                                        type: string
-                                        example: "66eb9df69df8435b5aeb3e12"
-                                    name:
-                                        type: string
-                                        example: "Thomas Domingos"
-                                    email:
-                                        type: string
-                                        example: "thomasdomingos@kenlo.com"
-                                    phone:
-                                        type: string
-                                        example: "+5519981335164"
+                              $ref: "#/components/entities/Lead"
                 "401":
                     $ref: "#/components/responses/Unauthorized"
                 "403":
@@ -140,15 +127,15 @@ paths:
                         schema:
                             type: object
                             properties:
-                                name:
-                                    type: string
-                                    example: "Thomas Domingos"
-                                email:
-                                    type: string
-                                    example: "thomasdomingos@kenlo.com.br"
-                                phone:
-                                    type: string
-                                    example: "+5519981335164"
+                              name:
+                                type: string
+                                example: 'Thomas Domingos'
+                              email:
+                                type: string
+                                example: "thomasdomingos@kenlo.com.br"
+                              phone:
+                                type: string
+                                example: "+5519981335164"
             responses:
                 "201":
                     description: "Lead criado com sucesso"
@@ -157,12 +144,18 @@ paths:
                             schema:
                                 type: object
                                 properties:
-                                    message:
-                                        type: string
-                                        example: "Lead criado com sucesso!"
-                                    leadId:
-                                        type: string
-                                        example: "66eb9df69df8435b5aeb3e12"
+                                  _id:
+                                    type: string
+                                    example: "66e7cf44d4f1c84f35ef1215"
+                                  name:
+                                    type: string
+                                    example: 'Thomas Domingos'
+                                  email:
+                                    type: string
+                                    example: "thomasdomingos@kenlo.com.br"
+                                  phone:
+                                    type: string
+                                    example: "+5519981335164"
                 "400":
                     $ref: "#/components/responses/BadRequest"
                 "401":
@@ -225,20 +218,7 @@ paths:
                       data:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            _id:
-                              type: string
-                              example: "66e7cf44d4f1c84f35ef1215"
-                            name:
-                              type: string
-                              example: 'Thomas Domingos'
-                            email:
-                              type: string
-                              example: "thomasdomingos@kenlo.com.br"
-                            phone:
-                              type: string
-                              example: "+5519981335164"
+                          $ref: "#/components/entities/Lead"
                       totalRows:
                         type: integer
                         example: 22
@@ -258,12 +238,93 @@ paths:
           security:
             - bearerAuth: []
 
+    /api/leads/{id}/interactions:
+        post:
+            tags:
+                - Lead - Interactions
+            summary: "Adicionar uma interação ao lead"
+            description: "Este endpoint permite adcionar uma nova interação ao lead."
+            operationId: "createLead"
+            parameters:
+              - name: id
+                in: path
+                required: true
+                description: "ID do lead a ser buscado"
+                schema:
+                    type: string
+                    example: "66eb9df69df8435b5aeb3e12"
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                              message:
+                                type: string
+                                example: 'Porque o Thomas deve ser contratado?'
+                              response:
+                                type: string
+                                example: "Porque ele é o candidato mais preparado para solucionar os problemas do mercado imobiliario."
+                              timestamp:
+                                type: string
+                                example: "2024-09-20T05:00:00Z"
+            responses:
+                "201":
+                    description: "Interaction adicionado ao Lead com sucesso"
+                    content:
+                        application/json:
+                            schema:
+                              $ref: "#/components/entities/Lead"
+                "400":
+                    $ref: "#/components/responses/BadRequest"
+                "401":
+                    $ref: "#/components/responses/Unauthorized"
+                "403":
+                    $ref: "#/components/responses/Forbidden"
+                "500":
+                    $ref: "#/components/responses/InternalError"
+
+            security:
+                - bearerAuth: []
 components:
     securitySchemes:
         bearerAuth:
             type: http
             scheme: bearer
             bearerFormat: JWT
+
+    entities:
+      Lead:
+        type: object
+        properties:
+          _id:
+            type: string
+            example: "66e7cf44d4f1c84f35ef1215"
+          name:
+            type: string
+            example: 'Thomas Domingos'
+          email:
+            type: string
+            example: "thomasdomingos@kenlo.com.br"
+          phone:
+            type: string
+            example: "+5519981335164"
+          interactions:
+            type: array
+            items:
+              type: object
+              properties:
+                message:
+                  type: string
+                  example: "Porque o Thomas deve ser contratado?"
+                response:
+                  type: string
+                  example: "Porque ele é o candidato mais preparado para solucionar os problemas do mercado imobiliário; Possuindo mais de 2 anos de experiência com serviços de tecnologias para imobiliárias."
+                createdAt:
+                  type: string
+                  format: date-time
+                  example: "2024-09-20T05:00:00.000Z"
 
     responses:
         Unauthorized:
