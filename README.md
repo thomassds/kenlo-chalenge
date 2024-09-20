@@ -96,8 +96,8 @@ Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 
 Os testes são escritos usando Jest e Supertest. Para executar os testes, use o comando:
 
-        ```bash
-    npm test
+    ```bash
+    npm run test
     ```
 
     ou
@@ -105,7 +105,7 @@ Os testes são escritos usando Jest e Supertest. Para executar os testes, use o 
     ```bash
     yarn test
     ```
-    
+ 
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
